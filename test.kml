@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Untitled map</name>
+    <description/>
+    <Style id="icon-1899-DB4436-normal">
+      <IconStyle>
+        <color>ff3644db</color>
+        <scale>1</scale>
+        <Icon>
+          <href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1899-DB4436-highlight">
+      <IconStyle>
+        <color>ff3644db</color>
+        <scale>1</scale>
+        <Icon>
+          <href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1899-DB4436">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1899-DB4436-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1899-DB4436-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="line-FFFF00-4000-normal">
+      <LineStyle>
+        <color>ff00ffff</color>
+        <width>4</width>
+      </LineStyle>
+    </Style>
+    <Style id="line-FFFF00-4000-highlight">
+      <LineStyle>
+        <color>ff00ffff</color>
+        <width>6</width>
+      </LineStyle>
+    </Style>
+    <StyleMap id="line-FFFF00-4000">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#line-FFFF00-4000-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#line-FFFF00-4000-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Folder>
+      <name>UA4</name>
+      <Placemark>
+        <name>BARIM to WOB VOR</name>
+        <description><![CDATA[length: 69.3<br>                level: 450 to 195]]></description>
+        <styleUrl>#line-FFFF00-4000</styleUrl>
+        <LineString>
+          <tessellate>1</tessellate>
+          <coordinates>
+            -37.001667,42.501667,5945
+            -36.173333,42.675,5945
+          </coordinates>
+        </LineString>
+      </Placemark>
+      <Placemark>
+        <name>WOB VOR to EKO VOR</name>
+        <description><![CDATA[length: 771.5999755859375<br>                level: 450 to 195]]></description>
+        <styleUrl>#line-FFFF00-4000</styleUrl>
+        <LineString>
+          <tessellate>1</tessellate>
+          <coordinates>
+            -36.173333,42.675,5945
+            -28.641667,47.136667,5945
+          </coordinates>
+        </LineString>
+      </Placemark>
+      <Placemark>
+        <name>EKO VOR to LMD VOR</name>
+        <description><![CDATA[length: 446.0<br>                level: 450 to 195]]></description>
+        <styleUrl>#line-FFFF00-4000</styleUrl>
+        <LineString>
+          <tessellate>1</tessellate>
+          <coordinates>
+            -28.641667,47.136667,5945
+            -23.216667,48.8,5945
+          </coordinates>
+        </LineString>
+      </Placemark>
+      <Placemark>
+        <name>LMD VOR to VEGAT</name>
+        <description><![CDATA[length: 163.1999969482422<br>                level: 450 to 195]]></description>
+        <styleUrl>#line-FFFF00-4000</styleUrl>
+        <LineString>
+          <tessellate>1</tessellate>
+          <coordinates>
+            -23.216667,48.8,5945
+            -21.133333,49.358333,5945
+          </coordinates>
+        </LineString>
+      </Placemark>
+      <Placemark>
+        <name>BARIM</name>
+        <description>Type: ICAO</description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            -37.001667,42.501667,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>WOB</name>
+        <description>Type: MKR</description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            -36.173333,42.675,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>EKO</name>
+        <description>Type: VOR</description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            -28.641667,47.136667,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>LMD</name>
+        <description>Type: VOR</description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            -23.216667,48.8,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>VEGAT</name>
+        <description>Type: ICAO</description>
+        <styleUrl>#icon-1899-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            -21.133333,49.358333,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>
