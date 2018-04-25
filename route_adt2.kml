@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2"
+    xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:aixm="http://www.aixm.aero/schema/5.1" xmlns:gmd="http://www.isotc211.org/2005/gmd"
+    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gml="http://www.opengis.net/gml/3.2"
+    xmlns:fn="http://www.w3.org/2005/xpath-functions">
+    <Document>
+        <name>LROP to EGLL</name>
+        <open>1</open>
+        <description>Route to follow</description>
+        <!-- assigning styles -->
+        <Style id="waypoint">
+            <IconStyle>
+                <Icon>
+                    <!--  <href>http://maps.google.com/mapfiles/kml/shapes/triangle.png</href> -->
+                    <!-- <href>https://maps.google.com/mapfiles/kml/pal4/icon60.png</href> -->
+                    <href> https://maps.google.com/mapfiles/dir_0.png </href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="ndb">
+            <IconStyle>
+                <Icon>
+                    <href>https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/NDB_Symbol.svg/200px-NDB_Symbol.svg.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="vor_dme">
+            <IconStyle>
+                <Icon>
+                    <href>https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/VOR-DME.svg/275px-VOR-DME.svg.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="vor">
+            <IconStyle>
+                <Icon>
+                    <!-- <href>https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Pictogram_VOR.svg/200px-Pictogram_VOR.svg.png</href> -->
+                    <href>https://maps.google.com/mapfiles/kml/shapes/polygon.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="tacan">
+            <IconStyle>
+                <Icon>
+                    <href>https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Pictogram_TACAN.svg/220px-Pictogram_TACAN.svg.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="other">
+            <IconStyle>
+                <Icon>
+                    <href>http://maps.google.com/mapfiles/kml/shapes/donut.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="routeSegment">
+            <LineStyle>
+                <color>501478FF</color>
+                <width>4</width>
+            </LineStyle>
+            <PolyStyle>
+                <color>7f00ff00</color>
+            </PolyStyle>
+        </Style>
+        <Style id="startPoint">
+            <IconStyle>
+                <Icon>
+                    <!-- 
+                    <href>https://maps.google.com/mapfiles/kml/paddle/grn-blank.png</href>
+                    -->
+                    <href>https://image.ibb.co/eU4HUH/30831054_1147317955408213_240961946_n.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+        <Style id="endPoint">
+            <IconStyle>
+                <Icon>
+                    <!--
+                    <href>https://maps.google.com/mapfiles/kml/pal2/icon13.png</href>
+                    -->
+                    <href>https://image.ibb.co/eU4HUH/30831054_1147317955408213_240961946_n.png</href>
+                </Icon>
+            </IconStyle>
+        </Style>
+
+        <Folder>
+
+            <name>Route Display</name>
+            <open>1</open>
+            <description/>
+            <Placemark>
+                <name>LROP to EGLL</name>
+                <styleUrl>#routeSegment</styleUrl>
+                <LineString>
+                    <tessellate>1</tessellate>
+                    <coordinates>26.10217700000001,44.572160499999995,0
+                        24.064132999999998,45.49350799999999,10668
+                        23.08808300000001,45.96029999999999,10668 22.242253000000005,46.3519,10668
+                        21.496656,46.687375,10668 19.527533000000005,47.21454399999999,10668
+                        19.129547000000002,47.340903,10668
+                        18.490121999999985,47.53977499999999,10668
+                        17.408907999999997,47.623774999999995,10668
+                        17.012842000000006,47.67771400000001,10668 16.28843599999999,47.874875,10668
+                        15.65397200000001,48.04398599999999,10668 15.109019999999987,48.18562,10668
+                        14.585640000000012,48.3185,10668 14.129830999999996,48.431781,10668
+                        13.73813899999999,48.52826999999999,10668
+                        13.505224999999996,48.58484200000001,10668
+                        13.075832999999989,48.68777800000001,10668
+                        12.658055999999988,48.785833,10668
+                        12.222221999999988,48.88583299999999,10668 11.459722,49.13722200000001,10668
+                        11.221436000000011,49.214372,10668
+                        10.941666999999995,49.38749999999999,10668
+                        10.778611000000012,49.48861099999999,10668 10.375,49.736110999999994,10668
+                        10.022500000000008,49.78972199999998,10668 9.590555999999992,49.822778,10668
+                        9.541944,49.823611,10668 8.800277999999992,50.056667000000004,10668
+                        7.6061109999999985,50.24027799999999,10668
+                        6.369721999999996,50.41666699999999,10668
+                        5.762499999999989,50.496943999999985,10668
+                        5.623333000000002,50.514722000000006,10668
+                        4.914032999999989,50.66222500000001,10668
+                        4.601111000000003,50.723055999999985,10668
+                        3.636957999999993,50.91263599999999,10302.24
+                        2.6516670000000033,51.09472199999999,7772.400000000001
+                        2,51.130832999999996,6156.96 -0.4609777699999995,51.47121787999998,0
+                    </coordinates>
+                </LineString>
+            </Placemark>
+            <!-- define ADEP -->
+            <Placemark>
+                <name>Otopeni Airport LROP</name>
+                <description>470 302.5 0.0.0</description>
+                <styleUrl>#startPoint</styleUrl>
+                <Point>
+                    <gx:drawOrder>1</gx:drawOrder>
+                    <coordinates>26.10218,44.57216,0</coordinates>
+                </Point>
+            </Placemark>
+            <!-- define ADES -->
+            <Placemark>
+                <name>Heathrow Airport EGLL</name>
+                <description>0 0 2.23.44</description>
+                <styleUrl>#endPoint</styleUrl>
+                <Point>
+                    <gx:drawOrder>1</gx:drawOrder>
+                    <coordinates>-0.46098,51.47122,0</coordinates>
+                </Point>
+            </Placemark>
+            <!-- define waypoints -->
+            <Placemark>
+                <name>EPUKI</name>
+                <description>470 302.5 0.13.1</description>
+                <styleUrl>#waypoint</styleUrl>
+                <Point>
+                    <gx:drawOrder>1</gx:drawOrder>
+                    <coordinates>24.06413,45.49351,0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>NEPOT</name>
+                <description>470 302.5 0.19.16</description>
+                <styleUrl>#waypoint</styleUrl>
+                <Point>
+                    <gx:drawOrder>1</gx:drawOrder>
+                    <coordinates>23.08808,45.96030,0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>EVRIK</name>
+                <description>470 304.5 0.24.38</description>
+                <styleUrl>#waypoint</styleUrl>
+                <Point>
+                    <gx:drawOrder>1</gx:drawOrder>
+                    <coordinates>22.24225,46.35190,0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>BUDOP</name>
+                <description>470 303.5 0.29.14</description>
+                <styleUrl>#waypoint</styleUrl>
+                <Point>
+                    <gx:drawOrder>1</gx:drawOrder>
+                    <coordinates>21.49666,46.68738,0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>DODAR</name>
+                <description>470 303 0.40.12</description>
+                <styleUrl>#waypoint</styleUrl>
+                <Point>
+                    <gx:drawOrder>1</gx:drawOrder>
+                    <coordinates>19.52753,47.21454,0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>BALUX</name>
+                <description>470 291.5 0.42.22</description>
+                <styleUrl>#waypoint</styleUrl>
+                <Point>
+                    <gx:drawOrder>1</gx:drawOrder>
+                    <coordinates>19.12955,47.34090,0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>TORNO</name>
+                <description>470 295 0.45.57</description>
+                <styleUrl>#waypoint</styleUrl>
+                <Point>
+                    <gx:drawOrder>1</gx:drawOrder>
+                    <coordinates>18.49012,47.53977,0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>TEKNO</name>
+                <description>470 294.5 0.51.34</description>
+                <styleUrl>#waypoint</styleUrl>
+                <Point>
+                    <gx:drawOrder>1</gx:drawOrder>
+                    <coordinates>17.40891,47.62377,0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>ABETI</name>
+                <description>470 276.5 0.53.37</description>
+                <styleUrl>#waypoint</styleUrl>
+                <Point>
+                    <gx:drawOrder>1</gx:drawOrder>
+                    <coordinates>17.01284,47.67771,0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>SNU</name>
+                <description>470 281.5 0.57.34</description>
+                <styleUrl>#vor</styleUrl>
+                <Point>
+                    <gx:drawOrder>1</gx:drawOrder>
+                    <coordinates>16.28844,47.87488,0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>TAGAS</name>
+                <description>470 292 1.1.1</description>
+                <styleUrl>#waypoint</styleUrl>
+                <Point>
+                    <gx:drawOrder>1</gx:drawOrder>
+                    <coordinates>15.65397,48.04399,0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>LUGIM</name>
+                <description>470 291.5 1.3.57</description>
+                <styleUrl>#waypoint</styleUrl>
+                <Point>
+                    <gx:drawOrder>1</gx:drawOrder>
+                    <coordinates>15.10902,48.18562,0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>MOTIX</name>
+                <description>470 291 1.6.45</description>
+                <styleUrl>#waypoint</styleUrl>
+                <Point>
+                    <gx:drawOrder>1</gx:drawOrder>
+                    <coordinates>14.58564,48.31850,0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>FRE</name>
+                <description>470 291 1.9.11</description>
+                <styleUrl>#vor</styleUrl>
+                <Point>
+                    <gx:drawOrder>1</gx:drawOrder>
+                    <coordinates>14.12983,48.43178,0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>PABSA</name>
+                <description>470 290.5 1.11.14</description>
+                <styleUrl>#waypoint</styleUrl>
+                <Point>
+                    <gx:drawOrder>1</gx:drawOrder>
+                    <coordinates>13.73814,48.52827,0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>RENKA</name>
+                <description>470 290.5 1.12.22</description>
+                <styleUrl>#waypoint</styleUrl>
+                <Point>
+                    <gx:drawOrder>1</gx:drawOrder>
+                    <coordinates>13.50522,48.58484,0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>GONBA</name>
+                <description>470 290 1.14.40</description>
+                <styleUrl>#waypoint</styleUrl>
+                <Point>
+                    <gx:drawOrder>1</gx:drawOrder>
+                    <coordinates>13.07583,48.68778,0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>STAUB</name>
+                <description>470 290 1.16.51</description>
+                <styleUrl>#waypoint</styleUrl>
+                <Point>
+                    <gx:drawOrder>1</gx:drawOrder>
+                    <coordinates>12.65806,48.78583,0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>MAMOR</name>
+                <description>470 289.5 1.19.8</description>
+                <styleUrl>#waypoint</styleUrl>
+                <Point>
+                    <gx:drawOrder>1</gx:drawOrder>
+                    <coordinates>12.22222,48.88583,0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>UNKUL</name>
+                <description>470 289 1.23.21</description>
+                <styleUrl>#waypoint</styleUrl>
+                <Point>
+                    <gx:drawOrder>1</gx:drawOrder>
+                    <coordinates>11.45972,49.13722,0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>ALB</name>
+                <description>470 296.5 1.24.38</description>
+                <styleUrl>#vor</styleUrl>
+                <Point>
+                    <gx:drawOrder>1</gx:drawOrder>
+                    <coordinates>11.22144,49.21437,0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>INBED</name>
+                <description>470 296 1.26.33</description>
+                <styleUrl>#waypoint</styleUrl>
+                <Point>
+                    <gx:drawOrder>1</gx:drawOrder>
+                    <coordinates>10.94167,49.38750,0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>LANGI</name>
+                <description>470 313.5 1.27.34</description>
+                <styleUrl>#waypoint</styleUrl>
+                <Point>
+                    <gx:drawOrder>1</gx:drawOrder>
+                    <coordinates>10.77861,49.48861,0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>VADRU</name>
+                <description>470 314 1.30.15</description>
+                <styleUrl>#waypoint</styleUrl>
+                <Point>
+                    <gx:drawOrder>1</gx:drawOrder>
+                    <coordinates>10.37500,49.73611,0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>OLIXA</name>
+                <description>470 313.5 1.32.2</description>
+                <styleUrl>#waypoint</styleUrl>
+                <Point>
+                    <gx:drawOrder>1</gx:drawOrder>
+                    <coordinates>10.02250,49.78972,0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>LEPSA</name>
+                <description>470 283 1.34.5</description>
+                <styleUrl>#waypoint</styleUrl>
+                <Point>
+                    <gx:drawOrder>1</gx:drawOrder>
+                    <coordinates>9.59056,49.82278,0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>DETEV</name>
+                <description>470 277 1.34.12</description>
+                <styleUrl>#waypoint</styleUrl>
+                <Point>
+                    <gx:drawOrder>1</gx:drawOrder>
+                    <coordinates>9.54194,49.82361,0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>BOMBI</name>
+                <description>470 272 1.38.10</description>
+                <styleUrl>#waypoint</styleUrl>
+                <Point>
+                    <gx:drawOrder>1</gx:drawOrder>
+                    <coordinates>8.80028,50.05667,0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>AMASI</name>
+                <description>470 296 1.44.10</description>
+                <styleUrl>#waypoint</styleUrl>
+                <Point>
+                    <gx:drawOrder>1</gx:drawOrder>
+                    <coordinates>7.60611,50.24028,0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>MATUG</name>
+                <description>470 283.5 1.50.17</description>
+                <styleUrl>#waypoint</styleUrl>
+                <Point>
+                    <gx:drawOrder>1</gx:drawOrder>
+                    <coordinates>6.36972,50.41667,0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>PELIX</name>
+                <description>470 282.5 1.53.14</description>
+                <styleUrl>#waypoint</styleUrl>
+                <Point>
+                    <gx:drawOrder>1</gx:drawOrder>
+                    <coordinates>5.76250,50.49694,0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>SPI</name>
+                <description>470 281.5 1.53.52</description>
+                <styleUrl>#vor</styleUrl>
+                <Point>
+                    <gx:drawOrder>1</gx:drawOrder>
+                    <coordinates>5.62333,50.51472,0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>REMBA</name>
+                <description>470 281 1.57.26</description>
+                <styleUrl>#waypoint</styleUrl>
+                <Point>
+                    <gx:drawOrder>1</gx:drawOrder>
+                    <coordinates>4.91403,50.66223,0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>BUPAL</name>
+                <description>470 288 1.58.58</description>
+                <styleUrl>#waypoint</styleUrl>
+                <Point>
+                    <gx:drawOrder>1</gx:drawOrder>
+                    <coordinates>4.60111,50.72306,0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>FERDI</name>
+                <description>470 287 2.3.49</description>
+                <styleUrl>#waypoint</styleUrl>
+                <Point>
+                    <gx:drawOrder>1</gx:drawOrder>
+                    <coordinates>3.63696,50.91264,0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>KOK</name>
+                <description>470 287.5 2.8.40</description>
+                <styleUrl>#vor</styleUrl>
+                <Point>
+                    <gx:drawOrder>1</gx:drawOrder>
+                    <coordinates>2.65167,51.09472,0</coordinates>
+                </Point>
+            </Placemark>
+            <Placemark>
+                <name>KONAN</name>
+                <description>136 286.7 2.11.44</description>
+                <styleUrl>#waypoint</styleUrl>
+                <Point>
+                    <gx:drawOrder>1</gx:drawOrder>
+                    <coordinates>2.00000,51.13083,0</coordinates>
+                </Point>
+            </Placemark>
+        </Folder>
+    </Document>
+</kml>

@@ -4,7 +4,7 @@ function initMap() {
 
     map = getMap(); //in GetMap.js; map customization
 
-    var src = 'https://dl.dropboxusercontent.com/s/2nztszr17gnr4jm/LROP%20to%20EGLL.kml?dl=0'; //File uploaded to dropbox in order to de downloaded
+    var src = 'https://dl.dropboxusercontent.com/s/m59iii15yt4cr4u/route_adt2.kml?dl=0'; //File uploaded to dropbox in order to de downloaded
     var kmlLayer = new google.maps.KmlLayer(src, {  //define kmlLayer to add to map
         suppressInfoWindows: true,
         preserveViewport: false,
@@ -12,7 +12,6 @@ function initMap() {
     });
 
     google.maps.event.addListener(kmlLayer, "click", showInContentWindow);
-
 }
 
 
