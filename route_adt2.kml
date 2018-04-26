@@ -15,6 +15,8 @@
                     <!--  <href>http://maps.google.com/mapfiles/kml/shapes/triangle.png</href> -->
                     <!-- <href>https://maps.google.com/mapfiles/kml/pal4/icon60.png</href> -->
                     <href> https://maps.google.com/mapfiles/dir_0.png </href>
+                    <gx:w>138</gx:w>
+                    <gx:h>138</gx:h>
                 </Icon>
             </IconStyle>
         </Style>
@@ -44,7 +46,7 @@
             <IconStyle>
                 <Icon>
                     <href>https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Pictogram_TACAN.svg/220px-Pictogram_TACAN.svg.png</href>
-                </Icon>
+                </Icon> 
             </IconStyle>
         </Style>
         <Style id="other">
