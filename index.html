@@ -3,15 +3,103 @@
   <head>
     <title>Simple Map</title>
     <meta name="viewport" content="initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   </head>
   <body>
-    <div id="map"></div>
+      <div class="wrapper">
+
+          <!-- Sidebar -->
+          <nav id="sidebar">
+      
+            <div id="content">
+              <div>
+                <div class="sidebar-header">
+                  <h3>4D Trajectory Generation</div>
+              </div>
+      
+              <ul class="list-unstyled components">
+                <li class="active">
+                  <a href="#">Type of Aircraft</a></li>
+                <li>
+                  <!-- Link with dropdown items -->
+                  <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Aircraft Details</a>
+                  <ul class="collapse list-unstyled" id="homeSubmenu">
+                    
+                    
+                      <a>Type:Airbus A320</a>
+                    
+                    <li>
+                      <a href=https://contentzone.eurocontrol.int/aircraftperformance/details.aspx?ICAO=A320>Aircraft Perofmance</a>
+                    </li>
+                  </ul>
+                  <li>
+                  <a href="#adepSubmenu" data-toggle="collapse" aria-expanded="false">ADEP</a>
+                  <ul class="collapse list-unstyled" id="adepSubmenu">
+                    
+                      <a>LROP</a>
+                      <a>LAT:44 &deg 32'60.00 N </a>
+                      <a>LONG:26 &deg 04'0.01 E</a></ul>
+                    </li>
+      
+      
+                  <li>
+                    <a href="#adesSubmenu" data-toggle="collapse" aria-expanded="false">ADES</a>
+                  <ul class="collapse list-unstyled" id="adesSubmenu">
+                    <a>LRH</a>
+                      <a>LAT:51&deg 28' 12.0720'' N</a>
+                      <a>LONG:0 &deg 27' 15.4620'' W</a></ul>
+                  </li>
+              
+              <li>
+                    <a href="#memberSubmenu" data-toggle="collapse" aria-expanded="false">Team Members</a>
+                  <ul class="collapse list-unstyled" id="memberSubmenu">
+                    <a>BORCEA DRAGOS</a>
+                      <a>MITEA ANDRADA</a>
+                      <a>STANESCU TEODOR</a></ul>
+                  </li>
+      
+      
+          </nav>
+      
+          <!-- Page Content -->
+          <div id="content">
+            <!--<button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+              <i class="glyphicon glyphicon-align-left"></i>
+              Additional Information
+            </button>-->
+
+            <div id="map"></div>
+            <canvas id="verticalProfile"></canvas>
+          </div>
+      
+          </div>
+        </div>
+      
+      </div>
+      <!--<div class="split left">
+        <div class="centered">
+          <img src="img_avatar2.png" alt="Avatar woman">
+          <h2>Jane Flex</h2>
+          <p>Some text.</p>
+        </div>
+      </div>-->
+    <!--<div id="map"></div>-->
     <script src="js/main.js"></script>
     <script src="js/GetMap.js"></script>
-    <script src="js/geoxml3.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAGJDMwG-AdFjCoqJEdvTBJlWt3H59ZMaU&callback=initMap&libraries=geometry"
     async defer></script>
+    <script src="js/KmlMapParser.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
+  <script src="js/Definition.js"></script>
+  
+  <!--<script src="KmlMapParser.js"></script>-->
+  <!--<script src="js/geoxml.js"></script>-->
   </body>
 </html>
