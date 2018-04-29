@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="plotly-latest.min.js"></script>
+</head>
+
+<body>
+<textarea id="input2" style="display:none;">
+</textarea>
+
+
+<script>
+	var set = 1;
+	var f = 0.5;
+	// time
+	var h,m,s; //departure time
+	h = 0;
+	m = 0;
+	s = 0;
+	var fi_i; // lat of dep
+	var lambda_i; // lon of dep
+	var count = 0;
+	var speed = 450 * 1.852; //kt * 1.852 = km/h
+	var length_in_km;
+	var time_in_min;
+	
+	//------------------------------
+	function update() {
+			
+	length_in_km = 2078;	//aceasta variabila nu era setata si de aia nu mergea
+		
+	//Initial Climb
+    var H_ic = 5000; //ft
+    var ROC_ic = 2500; //ft/min
+    var IAS_ic = 175; //kts
+    var T_ic = 2; //min
+    var D_ic = 175/(60/2); //NM
+    //Climb 1 
+    var H_c1 = 15000; //ft
+    var ROC_c1 = 2000; //ft/min
+    var IAS_c1 = 290; //kts
+    var T_c1 = 5; //min
+    var D_c1 = 290/(60/5); //NM
+    //Climb 2
+    var H_c2 = 24000; //ft
+    var ROC_c2 = 1400; //ft/min
+    var IAS_c2 = 290; //kts
+    var T_c2 = 9000/ROC_c2; //min
+    var D_c2 = 290/(60/T_c2); //NM
+    //Cruise at FL240
+    var H_cr = 24000; //ft
+    var Mach_cr = 0.78; 
+    var IAS_cr = 290;//605; //kts
+    //Descent
+    var H_d = 10000; //ft
+    var ROD_d = 3500; //ft/min
+    var IAS_d = 290; //kts
+    var T_d = 4; //min
+    var D_d = 290/(60/4); //NM
+    //Approach
+    var H_a = 0; //ft
+    var ROD_a = 1500; //ft/min
+    var IAS_a = 250; //kts
+    var T_a = 10000/1500; //min
+    var D_a = 250/(60/T_a); //NM
+
+    //var D_cr = length_in_km * 0.539956803 - (D_ic+D_c1+D_c2+D_d+D_a); //NM
+    var T_cr;
+    var T_tot;
+    //Mach Climb
+    var H_mc = 41000; //ft
+    var Mach_mc = 0.78;
+    var IAS_mc = 589 * 0.78; //EKTS
+    var ROC_mc = 1000; //ft/min
+    var T_mc = 17; //min
+    var D_mc = IAS_mc/(60/17); //NM
+    //Initial Descent
+    var H_id = 24000; //ft
+    var Mach_id = 0.78;
+    var IAS_id = 589 * 0.78; //kts
+    var ROC_id = 1000; //ft/min
+    var T_id = 17; //min
+    var D_id = IAS_id/(60/17); //NM
+	
+	var D_tot;
+	var D_total = length_in_km * 0.539956803; //NM
+	var D_cr;
+	var delta;
+	
+	D_cr = length_in_km * 0.539956803 - (D_ic+D_c1+D_c2+D_mc+D_id+D_d+D_a);
+    H_cr = 41000; //ft
+	IAS_cr = 0.78*605; //~472 kts
+	//D_cr = length_in_km * 0.539956803 - (D_ic+D_c1+D_c2+D_mc+D_id+D_d+D_a)
+    T_cr = D_cr/IAS_cr * 60; //min
+    T_tot = T_ic + T_c1 + T_c2 + T_mc + T_cr + T_id + T_d + T_a;
+    D_tot = D_ic + D_c1 + D_c2 + D_mc + D_cr + D_id + D_d + D_a;
+		
+	var lat1 = 44.571111 * Math.PI/180; // init ADEP
+	var lon1 = 26.085 * Math.PI/180;
+	var lat2 = 51.4775 * Math.PI/180; // init ADES
+	var lon2 = -0.461389 * Math.PI/180;
+
+	var fi = Math.abs(lat1-lat2);
+	var lambda = Math.abs(lon1-lon2);
+	var a = Math.pow(Math.sin(fi/2),2) + Math.cos(lat1) * Math.cos(lat2)*Math.pow(Math.sin(lambda/2), 2);
+	var c = 2 * Math.atan(Math.sqrt(a/(1-a)));	
+	
+	var A = Math.sin((1-f)*c)/Math.sin(c);
+	var B = Math.sin(f*c)/Math.sin(c);
+
+	var x = A*Math.cos(lat1)*Math.cos(lon1) + B*Math.cos(lat2)*Math.cos(lon2);
+	var y = A*Math.cos(lat1)*Math.sin(lon1) + B*Math.cos(lat2)*Math.sin(lon2);
+	var z = A*Math.sin(lat1) + B*Math.sin(lat2);
+	
+	fi_i = Math.atan(z/Math.sqrt(x*x+y*y)) * 180/Math.PI; //lat
+	lambda_i = Math.atan(y/x) * 180/Math.PI; //lon
+	
+	var time_passed = T_tot * f;
+    var D_passed = D_tot * f;
+    var ROC;
+    var H;
+	var xp; //%
+	var yp; //%
+	var rp; //%
+	
+	// time calculations
+	
+    var h1 = h + Math.floor(time_passed/60);
+	var m1 = m + (Math.floor(time_passed)-Math.floor(time_passed/60)*60);
+	var s1 = s + Math.floor((time_passed-Math.floor(time_passed))*60);
+		
+	if(s1>=60){ s1 = s1 - 60; m1++;}
+	if(m1>=60){ m1 = m1 - 60; h1++;}
+	/////\\\\\
+	var h11 = h + Math.floor(T_tot/60);
+	var m11 = m + (Math.floor(T_tot)-Math.floor(T_tot/60)*60);
+	var s11 = s + Math.floor((T_tot-Math.floor(T_tot))*60);
+		
+	if(s11>=60){ s11 = s11 - 60; m11++;}
+	if(m11>=60){ m11 = m11 - 60; h11++;}
+	
+	
+	var ww = document.getElementById("tester").offsetWidth;
+	var hh = document.getElementById("tester").offsetHeight;
+		
+	// plot
+	var layout = {
+	  //autosize: false,
+	  width: ww,
+	  height: hh,
+	  //margin: {t: 0}
+	  margin: {
+		l: 50,
+		r: 1,
+		b: 25,
+		t: 1,
+		pad: 1
+	  },
+	  xaxis:{title: "distance"},
+	  yaxis:{title: "Height"}
+	  //paper_bgcolor: '#7f7f7f',
+	  //plot_bgcolor: '#c7c7c7'
+	};
+	
+	console.log();
+	TESTER = document.getElementById('tester');
+	
+	Plotly.newPlot( "tester", [{
+		x: [0],
+		y: [0], name: 'Vertical Profile' }],
+		layout);
+	
+	Plotly.plot( TESTER, [{
+		x: [250],
+		y: [41000], name: "A/C loc" }],
+		layout);
+	
+	Plotly.deleteTraces(TESTER, 0);
+	Plotly.deleteTraces(TESTER, 0);
+	
+	// afisari pt debug
+	document.getElementById("infox").innerHTML = "D_cr=" + D_cr;
+	
+	Plotly.newPlot( "tester", [{
+		x: [0, D_ic, D_ic+D_c1, D_ic+D_c1+D_c2, D_ic+D_c1+D_c2+D_mc, D_ic+D_c1+D_c2+D_mc+D_cr, D_ic+D_c1+D_c2+D_mc+D_cr+D_id, D_ic+D_c1+D_c2+D_mc+D_cr+D_id+D_d, D_ic+D_c1+D_c2+D_mc+D_cr+D_id+D_d+D_a],
+		y: [0, H_ic, H_c1, H_c2, H_mc, H_cr, H_id, H_d, H_a], name: 'Vertical Profile' }],
+		layout);
+	}
+	//------------------------------
+
+</script>
+
+
+<!-- Campul de desenare -->
+<div id="tester"></div>
+
+<div id="second">
+	<!-- Exemple de camp de afisare pt debug -->
+	<div id="infox"></div>
+	
+	<button type="button" onclick="update();">Click Me!</button>
+</div>
+
+</body>
+</html>
